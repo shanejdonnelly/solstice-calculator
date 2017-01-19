@@ -1,7 +1,7 @@
 var w16 = moment('2016-12-21 05:44');
 var now = moment();
-var diff = w16.diff(now, 'days');
-var other_side = diff > 0 ? w16.subtract(diff, 'days') : w16.add(diff, 'days');
+var diff = Math.abs(w16.diff(now, 'days'));
+var other_side = w16.subtract(diff, 'days');
 
 var $entry = document.getElementById('entry');
 var $today = '<p>Today is ' + now.format("dddd, MMMM Do YYYY") + '</p>';
